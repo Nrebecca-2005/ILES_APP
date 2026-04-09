@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'apps.users',
     'apps.weekly_logs',
-    'apps.placements',
-    'rest_framework'
+    'apps.placements', 
+    'apps.evaluation',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'iles_db',
-        'USER': 'iles_user',
-        'PASSWORD': 'iles_user',
+        'USER': 'postgres',
+        'PASSWORD': '92BT18',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
