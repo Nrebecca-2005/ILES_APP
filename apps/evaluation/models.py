@@ -8,3 +8,10 @@ class Evaluation(models.Model):
         ('submitted', 'Submitted'),
         ('approved', 'Approved'),
     ]
+
+student = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='evaluations_received',
+        limit_choices_to={'role': 'student'}
+    )
