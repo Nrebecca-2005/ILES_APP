@@ -30,4 +30,8 @@ academic_supervisor = models.ForeignKey(
         limit_choices_to={'role': 'academic'}
     )
 
-        
+internship = models.ForeignKey(
+        'internship.InternshipPlacement',
+        on_delete=models.CASCADE,
+        related_name='evaluations'
+    )
