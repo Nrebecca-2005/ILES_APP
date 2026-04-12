@@ -64,3 +64,11 @@ class Evaluation(models.Model):
         if not logs:
             return 0
         return sum(log.performance_score for log in logs) / logs.count()
+    
+    def calculate_supervisor_score(self):
+        return (
+            self.attendance +
+            self.teamwork +
+            self.communication +
+            self.technical_skills
+        ) / 4
