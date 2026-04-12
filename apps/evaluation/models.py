@@ -96,3 +96,6 @@ class Evaluation(models.Model):
         self.grade = self.calculate_grade()
         
         super().save(*args, **kwargs)
+        
+    def __str__(self):
+     return f"{self.student} - {self.grade}"    
