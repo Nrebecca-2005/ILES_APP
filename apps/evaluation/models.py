@@ -72,5 +72,16 @@ class Evaluation(models.Model):
             self.communication +
             self.technical_skills
         ) / 4
+        
     def calculate_total(self):
         return (self.log_score + self.supervisor_score) / 2
+    def calculate_grade(self):
+        if self.total_score >= 80:
+            return 'A'
+        elif self.total_score >= 70:
+            return 'B'
+        elif self.total_score >= 60:
+            return 'C'
+        elif self.total_score >= 50:
+            return 'D'
+        return 'F'
