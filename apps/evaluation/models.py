@@ -90,3 +90,5 @@ class Evaluation(models.Model):
         self.log_score = self.calculate_log_score()
         
         self.supervisor_score = self.calculate_supervisor_score()
+
+        self.total_score = self.calculate_total()
