@@ -7,4 +7,8 @@ class InternshipPlacementserializer(serializers.modelsSerializer):
     academic_supervisor_name = serializers.ReadOnlyField(source = 'academic_supervisor.get_full_name')
     class Meta:
         model = InternshipPlacement
-        fields = '__all__'   
+        fields = '__all__'
+    def validate(self, data):
+        if data['start_date'] > data['end_date']:
+            raise serializers.ValidationError("The end date must be after the start date.")
+        return data      
