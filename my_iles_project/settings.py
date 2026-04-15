@@ -21,7 +21,12 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.weekly_logs',
     'apps.placements',
+ HEAD
     'apps.evaluation',
+
+    'apps.evaluations',
+    'rest_framework'
+f36dc68 (updated project)
 ]
 
 MIDDLEWARE = [
