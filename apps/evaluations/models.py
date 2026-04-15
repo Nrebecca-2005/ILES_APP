@@ -17,6 +17,21 @@ class Evaluation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"Evaluation for {self.placement}"
+    
+class Evaluationscore(models.Model):
+    evaluation = models.ForeignKey(
+        Evaluation,
+        on_delete=models.CASCADE,
+        related_name = 'scores'
+    )
+    criteria = models.ForeignKey(
+        Evaluationcriteria,
+        on_delete=models.CASCADE
+    )
+    score = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.criteria.name}: {self.score}"        
 
     
 
