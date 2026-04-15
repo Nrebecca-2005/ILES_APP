@@ -9,7 +9,7 @@ class Evaluationcriteria(models.Model):
         return self.name
 class Evaluation(models.Model):
     placement = models.ForeignKey(
-        'apps.placements',
+        'placements.InternshipPlacement',
         on_delete = models.CASCADE,
         related_name = 'evaluations'
     )
