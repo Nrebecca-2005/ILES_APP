@@ -38,6 +38,7 @@ class Evaluation(models.Model):
 
     weekly_logs = models.ForeignKey(
         'weekly_logs.WeeklyLog',
+        on_delete= models.CASCADE,
         related_name='evaluations',
         blank=True
     )
