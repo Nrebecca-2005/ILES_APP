@@ -15,19 +15,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    
-
     'apps.users',
     'apps.weekly_logs',
     'apps.placements',
- 
     'apps.evaluation',
-
-    
     'rest_framework',
-
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +57,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'iles_db',
         'USER': 'postgres',
-        'PASSWORD': 'Becky123',
+        'PASSWORD': 'gift@20maK',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -85,7 +79,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Kampala'
 USE_I18N = True
 USE_TZ = True
 
