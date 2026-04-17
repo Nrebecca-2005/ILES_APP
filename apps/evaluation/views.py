@@ -16,6 +16,19 @@ def evaluation_list(request):
     evaluations = Evaluation.objects.all()
     return render(request, 'evaluation_list.html', {'evaluations': evaluation})
 
+def update_evaluation(request, pk):
+    evaluation = get_object_or_404(Evaluation, id=pk)
+
+    if request.method == 'POST':
+        form = EvaluationForm(request.POST, instance=evaluation)
+        if form.is_valid():
+            form.save()
+            return redirect('evaluation_list')
+    else:
+        form = EvaluationForm(instance = evaluation)
+
+    return render(request, 'update_evaluation.html', {'form': form})        
+            
 
         
 
