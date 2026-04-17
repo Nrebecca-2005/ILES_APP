@@ -27,10 +27,18 @@ def update_evaluation(request, pk):
     else:
         form = EvaluationForm(instance = evaluation)
 
-    return render(request, 'update_evaluation.html', {'form': form})        
+    return render(request, 'update_evaluation.html', {'form': form})  
+
+def delete_evaluation(request, pk):
+    evaluation = get_object_or_404(Evaluation, id=pk)
+
+    if request.method == 'POST':
+        evaluation.delete()
+        return redirect('evaluation_list')
+    return render(request, 'delete_evaluation.html', {'evaluation': evaluation})      
             
 
         
 
 
-# Create your views here.
+
